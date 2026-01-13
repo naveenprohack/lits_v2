@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+
+
+.form-container, .receipt-container {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input, form button {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+header .logo img {
+    height: 50px;
+}
+
+header .header-text {
+    text-align: right;
+}
+
+header .header-text h1 {
+    margin: 0;
+    font-size: 18px;
+}
+
+header .header-text p {
+    margin: 0;
+    font-size: 12px;
+}
+
+.details {
+    margin: 20px 0;
+}
+
+.details p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background: #f4f4f4;
+}
+
+.footer {
+    text-align: center;
+}
+
+.footer p {
+    margin: 10px 0;
+    font-size: 12px;
+}
+
+.signatures {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.signatures .candidate-sign,
+.signatures .authorized-sign {
+    text-align: center;
+}
+
+.signatures .authorized-sign img {
+    height: 50px;
+    margin-top: 10px;
+}

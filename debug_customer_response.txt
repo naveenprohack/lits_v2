@@ -1,0 +1,1 @@
+{"error":{"code":"BAD_REQUEST_ERROR","description":"Customer already exists for the merchant","step":"NA","reason":"NA","source":"NA"}}

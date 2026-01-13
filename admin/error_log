@@ -1,0 +1,5 @@
+[28-Dec-2025 13:15:46 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'status' in 'SET' in /home/umfhblh1rqr6/public_html/admin/update_status.php:24
+Stack trace:
+#0 /home/umfhblh1rqr6/public_html/admin/update_status.php(24): mysqli_query()
+#1 {main}
+  thrown in /home/umfhblh1rqr6/public_html/admin/update_status.php on line 24

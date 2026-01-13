@@ -1,0 +1,8 @@
+
+RewriteEngine on
+# 1. Handle the Course Slugs first (Virtual Path)
+# This maps: yoursite.com/course/php-tutorial -> coursedetails.php?slug=php-tutorial
+RewriteRule ^courses/([a-zA-Z0-9-]+)/?$ coursedetails.php?slug=$1 [L,QSA]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php
