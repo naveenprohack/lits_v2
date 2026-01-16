@@ -104,7 +104,7 @@
 
 <div class="container hub-container pb-5">
     
-    <div class="welcome-box d-flex align-items-center justify-content-between">
+<div class="welcome-box d-flex align-items-center justify-content-between">
         <div>
             <h3 class="fw-800 mb-1">Welcome, <span class="text-gradient"><?= $_SESSION['admin'] ?></span> 👋</h3>
             <p class="text-muted small mb-0 fw-semibold">You have <span class="text-primary">4 pending</span> mandate approvals today.</p>

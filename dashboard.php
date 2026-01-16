@@ -488,6 +488,22 @@ button[aria-expanded="true"] .rotate {
             justify-content: space-between;
             align-items: center;
         }
+        .welcome-box {
+            background: white;
+            border-radius: 24px;
+            padding: 30px;
+            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            margin-bottom: 40px;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #2563eb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
 
 </style>
 </head>
@@ -536,17 +552,21 @@ include('sidebar.php');
 
     if ($page == 'home') {
     ?>
-        <div class="mb-5 d-flex justify-content-between align-items-center">
-            <div>
-                <h1 class="fw-800 display-6 mb-1">System Overview</h1>
-                <p class="text-muted fw-semibold">Manage your educational ecosystem and financial mandates.</p>
-            </div>
-            <a href="dashboard.php?page=chart_view" class="btn-dashboard-pill">
+    <div class="welcome-box d-flex align-items-center justify-content-between">
+        <div>
+            <h3 class="fw-800 mb-1">Welcome, <span class="text-gradient"><?= $_SESSION['admin'] ?></span> 👋</h3>
+            <p class="text-muted small mb-0 fw-semibold">You have <span class="text-primary">4 pending</span> mandate approvals today.</p>
+        </div>
+        <div class="d-none d-md-block">
+             <a href="dashboard.php?page=chart_view" class="btn-dashboard-pill">
                 <i class="bi bi-cpu-fill me-2"></i> System Analytics
             </a>
+            <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill small fw-bold">
+                <i class="bi bi-clock-history me-1"></i> Last login: Just now
+            </span>
         </div>
-
-        <div class="row g-4">
+    </div>
+        <div class="row g-4 mt-5">
             <div class="col-md-4">
                 <div class="module-card">
                     <div class="icon-box-modern bg-blue-soft">
