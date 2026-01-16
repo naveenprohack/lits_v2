@@ -271,7 +271,9 @@
                                 <a class="dropdown-item fw-bold" href="https://litsedu.com/result" style="color: #0ca6a3 !important;">
                                     <i class="fas fa-file-invoice me-2"></i>Result
                                 </a>
-                                
+                                <a class="dropdown-item fw-bold" href="https://litsedu.com/job_list" style="color: #0ca6a3 !important;">
+                                    <i class="fas fa-file-invoice me-2"></i>job search
+                                </a>
                                 <hr class="my-2"> <h6><i class="fas fa-fire me-2"></i>Trending</h6>
                                 <a class="dropdown-item" href="https://litsedu.com/Course/Ethical-Hacking-Online-Training">Ethical Hacking</a>
                                 <a class="dropdown-item" href="https://litsedu.com/Course/React-Online-Training.">React JS</a>

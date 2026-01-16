@@ -13,6 +13,8 @@ website classes, web course, course learning, web programming courses, flexible 
     <meta name="description" content="Learn Institute of technology provide a various online courses that help you to upskill your career in different domains.">
     <meta name="author" content="litsedu.com">
      <link rel="canonical" href="https://litsedu.com/placement" />
+         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <style>
     html, body {
         max-width: 100%;
@@ -262,55 +264,46 @@ body {
 <?php 
 include('./dbConnection.php');
 
-
   // Header Include from mainInclude 
   include('./mainInclude/header.php'); 
-  
    // Header Include from mainInclude 
   include('./floatingwi.php'); 
 
 ?>
     <section class="testimonial-section">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="fw-bold" style="color: #333;">Our Successful <span style="color: var(--brand-teal);">Students</span></h2>
-            <p class="text-muted">Real stories from students who transformed their careers at LITS.</p>
-        </div>
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold" style="color: #333;">Our Successful <span style="color: var(--brand-teal);">Students</span></h2>
+                <p class="text-muted">Real stories from students who transformed their careers at LITS.</p>
+            </div>
 
-        <div class="row g-4">
-            <div class="testimonial shadow-sm p-3 bg-white rounded">
-                <div class="profile-pic">
-                    <img src="./image/student_placed/student_01.png" alt="Student Success" class="rounded-circle">
-                </div>
-                <div class="testimonial-content">
-                    <p class="testimonial-text">"I am incredibly grateful for the guidance and support provided by the placement team."</p>
-                    <p class="student-name">- Alice Johnson</p>
-                    <p class="student-details text-teal fw-bold">Software Engineer at XYZ Company</p>
-                </div>
-            </div>
-            <div class="testimonial shadow-sm p-3 bg-white rounded">
-                <div class="profile-pic">
-                    <img src="./image/student_placed/student_02.png" alt="Student Success" class="rounded-circle">
-                </div>
-                <div class="testimonial-content">
-                    <p class="testimonial-text">"The mock interviews and resume building workshops were incredibly valuable. I'm now working at DEF Inc., thanks to the LITS team."</p>
-                    <p class="student-name">- Alice Johnson</p>
-                    <p class="student-details text-teal fw-bold">Marketing Specialist @ DEF Inc.</p>
-                </div>
-            </div>
-            <div class="testimonial shadow-sm p-3 bg-white rounded">
-                <div class="profile-pic">
-                    <img src="./image/student_placed/student_03.png" alt="Student Success" class="rounded-circle">
-                </div>
-                <div class="testimonial-content">
-                    <p class="testimonial-text">"The skills and confidence I gained through the training sessions were instrumental in landing my job at ABC Corp. Thank you!"</p>
-                    <p class="student-name">- Emily Davis</p>
-                    <p class="student-details text-teal fw-bold">Data Analyst @ ABC Corp</p>
-                </div>
+            <div class="row g-4">
+                <?php 
+                $sql = "SELECT * FROM placements ORDER BY id DESC";
+                $result = $conn->query($sql);
+                if($result->num_rows > 0) {
+                    while($row = $result->fetch_assoc()) {
+                        ?>
+                        <div class="testimonial shadow-sm p-3 bg-white rounded">
+                            <div class="profile-pic">
+                                <img src="./image/student_placed/<?php echo $row['student_image']; ?>" alt="Success" class="rounded-circle">
+                            </div>
+                            <div class="testimonial-content">
+                                <p class="testimonial-text">"<?php echo $row['testimonial_text']; ?>"</p>
+                                <p class="student-name">- <?php echo $row['student_name']; ?></p>
+                                <p class="student-details text-teal fw-bold"><?php echo $row['student_details']; ?></p>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                } else {
+                    echo "<p class='text-center'>No testimonials found.</p>";
+                }
+                ?>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    
     <div class="chatbot-container">
         <div class="chatbot-header">
             <h4>Chatbot</h4>
@@ -323,59 +316,6 @@ include('./dbConnection.php');
             <input type="text" id="userInput" placeholder="Type your message here..." autocomplete="off">
             <button id="sendBtn">Send</button>
         </div>
-    </div>
-    
-    <div class="container-fluid">
-        <marquee class="marq" direction="left" loop="" style=" height: 20%;
-            margin-top: 10px;"> 
-        <div class="marquee-container" style=" display: flex;
-            flex-direction: row;
-            /* align-items: center; */
-            justify-content: center;
-            gap: 2em;">
-            <div class="logo">
-                <img src="image/company_logos/zoho.png" alt="learn institute of technology service">
-            </div>
-            <div class="logo">
-                <img src="image/company_logos/deloitte.png" alt="learn institute of technology service">
-            </div>
-            
-            <div class="logo">
-                <img src="image/company_logos/tech_mahindra.png" alt="learn institute of technology service">
-            </div>
-            <div class="logo">
-                <img src="image/company_logos/amazon.png" alt="learn institute of technology service">
-            </div>
-            <div class="logo">
-                <img src="image/company_logos/flipkart.png" alt="learn institute of technology service">
-            </div>
-            <div class="logo">
-                <img src="image/company_logos/zoho.png" alt="learn institute of technology service">
-            </div>
-            <div class="logo">
-                <img src="image/company_logos/hcl.png" alt="learn institute of technology service">
-            </div>
-            <div class="logo">
-                <img src="image/company_logos/deloitte.png" alt="learn institute of technology service">
-            </div>
-            
-            <div class="logo">
-                <img src="image/company_logos/tech_mahindra.png" alt="learn institute of technology service">
-            </div>
-            <div class="logo">
-                <img src="image/company_logos/amazon.png" alt="learn institute of technology service">
-            </div>
-            <div class="logo">
-                <img src="image/company_logos/flipkart.png" alt="learn institute of technology service">
-            </div>
-            <div class="logo">
-                <img src="image/company_logos/zoho.png" alt="learn institute of technology service">
-            </div>
-            <div class="logo">
-                <img src="image/company_logos/hcl.png" alt="learn institute of technology service">
-            </div>
-        </div>
-       </marquee> 
     </div>
     
        

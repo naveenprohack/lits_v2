@@ -51,9 +51,7 @@ if (isset($_POST['save_result'])) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
+
   <style>
     /* Container and Heading */
 .page-header-title {
@@ -130,12 +128,7 @@ if (isset($_POST['save_result'])) {
     box-shadow: 0 4px 12px rgba(60, 80, 224, 0.25);
 }
   </style>
-  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-</head>
 <body>
 
 <div class="container py-4">
@@ -231,4 +224,3 @@ $(document).ready(function() {
 });
 </script>
 </body>
-</html>

@@ -34,12 +34,7 @@ $result = $conn->query("SELECT * FROM students ORDER BY student_id DESC");
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>View Students</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
         /* Container & Header */
 .page-header {
@@ -127,7 +122,6 @@ $result = $conn->query("SELECT * FROM students ORDER BY student_id DESC");
     color: #ffffff;
 }
     </style>
-</head>
 
 <body>
 
@@ -291,4 +285,3 @@ $result = $conn->query("SELECT * FROM students ORDER BY student_id DESC");
 </div>
 
 </body>
-</html>

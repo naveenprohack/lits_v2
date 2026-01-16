@@ -9,7 +9,7 @@ if (session_status() === PHP_SESSION_NONE) {
 if (isset($_POST['student_id'])) {
     $student_id = mysqli_real_escape_string($conn, $_POST['student_id']);
 
-    // Adjust this query based on your DB structure. 
+  // Adjust this query based on your DB structure. 
     // Example: Fetching courses where the student is enrolled.
     // 1. First, get the JSON data from the student table
 $query1 = "SELECT extra_data FROM students WHERE student_id = '$student_id'";

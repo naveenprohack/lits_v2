@@ -12,7 +12,7 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $jobId);
 
 if ($stmt->execute()) {
-    echo "<script>alert('Job deleted successfully'); window.location='admin_job_posts.php';</script>";
+    echo "<script>alert('Job deleted successfully'); window.location='dashboard.php?page=job_post';</script>";
 } else {
     echo "Delete Error: " . $stmt->error;
 }

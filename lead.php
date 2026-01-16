@@ -46,13 +46,7 @@ $reminder_query = "SELECT * FROM enquiry
 $reminder_result = mysqli_query($conn, $reminder_query);
 $reminder_count = mysqli_num_rows($reminder_result);
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>LITS Admin Panel - Enquiries</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
         .admin-header { background: white; border-bottom: 1px solid #dee2e6; padding: 15px 0; position: sticky; top: 0; z-index: 1020; }
         
@@ -163,8 +157,6 @@ $reminder_count = mysqli_num_rows($reminder_result);
     box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.2);
 }
     </style>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
 <body>
 
 <div class="admin-header shadow-sm mb-4">
@@ -555,4 +547,3 @@ function exportTableToCSV(filename) {
 }
 </script>
 </body>
-</html>

@@ -68,7 +68,7 @@ $pdf->Cell(0, 10, "Reg. No : $cert_id", 0, 1);
 
 // Student Name
 $pdf->SetFont('times', 'B', 22);
-$pdf->SetXY(50, 95);
+$pdf->SetXY(50, 120);
 $pdf->Cell(110, 10, $name, 0, 1, 'C');
 
 // Dates
@@ -112,5 +112,5 @@ $stmt->bind_param("ssssssssss", $cert_id, $name, $course, $start, $end, $topics,
 $stmt->execute();
 
 // Success message
-echo "<script>alert('Certificate Generated Successfully'); window.location='certificate_list.php';</script>";
+echo "<script>alert('Certificate Generated Successfully'); window.location='dashboard.php?page=certificate';</script>";
 ?>

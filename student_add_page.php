@@ -93,13 +93,6 @@ if (isset($_POST['save_student'])) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Add Student Profile</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
         body { background-color: #F1F5F9; }
         .page-title-modern { color: #1C2434; font-weight: 700; font-size: 1.5rem; margin-bottom: 25px; }
@@ -198,7 +191,6 @@ if (isset($_POST['save_student'])) {
         }
 
     </style>
-</head>
 <body>
  
 <div class="container py-5">
@@ -501,4 +493,3 @@ if (isset($_POST['save_student'])) {
     });
 </script>
 </body>
-</html>

@@ -18,7 +18,8 @@ website classes, web course, course learning, web programming courses, flexible 
     <link rel="manifest" href="manifest.json" />
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link rel="icon" type="/image/png" href="image/Logo.png" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
          <!-- jQUery CDN -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

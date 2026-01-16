@@ -10,7 +10,7 @@
         <i class="bi bi-house-door-fill"></i> Dashboard
     </a>
 
-    <button class="d-flex justify-content-between align-items-center" 
+    <button class="d-flex justify-content-between align-items-center "  
             data-bs-toggle="collapse" 
             data-bs-target="#studentMenu" 
             aria-expanded="false">
@@ -18,8 +18,10 @@
         <i class="bi bi-chevron-down rotate"></i>
     </button>
     <div class="collapse collapse-menu" id="studentMenu">
-        <a href="dashboard.php?page=student_add_page" class="sub-link">Add Student</a>
-        <a href="dashboard.php?page=student_list_page" class="sub-link">View Database</a>
+        <a href="dashboard.php?page=student_add_page" class="sub-link <?= isset($_GET['page']) &&($_GET['page']=='student_add_page') ? 'active' : '' ?>">Add Student</a>
+        <a href="dashboard.php?page=student_list_page" class="sub-link <?= isset($_GET['page']) &&($_GET['page']=='student_list_page') ? 'active' : '' ?>">View Database</a>
+        <a href="dashboard.php?page=admin_placements" class="sub-link <?= isset($_GET['page']) &&($_GET['page']=='admin_placements') ? 'active' : '' ?>">Student placement</a>
+        
     </div>
 
     <button class="d-flex justify-content-between align-items-center" 
@@ -30,8 +32,9 @@
         <i class="bi bi-chevron-down rotate"></i>
     </button>
     <div class="collapse collapse-menu" id="courseMenu">
-        <a href="course_add.php" class="sub-link">Create Course</a>
-        <a href="courses_manage.php" class="sub-link">Manage Catalog</a>
+        <a href="dashboard.php?page=create_course" class="sub-link">Create Course</a>
+        <a href="dashboard.php?page=courses_manage" class="sub-link">Manage Courses</a>
+        <a href="dashboard.php?page=manage_categories" class="sub-link">Courses Category Manage</a>
     </div>
 
     <p class="sidebar-label">Reports & Analytics</p>

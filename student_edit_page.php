@@ -116,7 +116,7 @@ if (isset($_POST['update_student'])) {
 
                             <div id="image-preview-container" class="image-preview-container <?= empty($extra['photo']) ? 'd-none' : '' ?>">
                                 <img id="preview-img" src="<?= !empty($extra['photo']) ? 'uploads/students/'.$extra['photo'] : '#' ?>" alt="Preview">
-                                <button type="button" class="btn btn-danger btn-sm rounded-circle position-absolute top-0 end-0 m-2" onclick="removeImage()">
+                                <button type="button" class="btn btn-danger btn-sm rounded-circle position-absolute top-0 end-0 m-2" onclick="removeImage(event)">
                                     <i class="bi bi-x"></i>
                                 </button>
                             </div>
@@ -330,7 +330,10 @@ if (isset($_POST['update_student'])) {
         }
     }
 
-    function removeImage() {
+    function removeImage(event) {
+        if (event) {
+            event.stopPropagation();
+        }
         const input = document.getElementById('profile_image');
         const placeholder = document.getElementById('upload-placeholder');
         const previewContainer = document.getElementById('image-preview-container');

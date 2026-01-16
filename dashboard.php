@@ -16,11 +16,13 @@ if (!isset($_SESSION['admin'])) {
 <title>Admin Dashboard</title>
 
 <!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-  <!-- Icons -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="image/Logo.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 body {
     background-color: #f4f6f9;
@@ -163,8 +165,8 @@ button[aria-expanded="true"] .rotate {
 }
 
 .content {
-    margin-left: 300px;
-    padding: 30px;
+    margin-left: 280px;
+    padding: 40px;
     transition: all 0.3s;
 }
 
@@ -338,117 +340,282 @@ button[aria-expanded="true"] .rotate {
 
 .btn-modern:hover {
     opacity: 0.9;
-    color: #fff;
     letter-spacing: 0.3px;
 }
+:root {
+            --sidebar-bg: #1C2434;
+            --accent-blue: #3C50E0;
+            --body-bg: #f8fafc;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--body-bg);
+            color: #1e293b;
+            overflow-x: hidden;
+        }
+
+        /* Sidebar Refinement */
+        .sidebar {
+            height: 100vh;
+            width: 280px;
+            position: fixed;
+            top: 0; left: 0;
+            background: var(--sidebar-bg);
+            padding: 25px 20px;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        /* Top Header (The Missing Piece) */
+        .top-header {
+            margin-left: 280px;
+            padding: 15px 40px;
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+   
+
+        /* Elite Module Cards */
+        .module-card {
+            background: white;
+            border: 1px solid rgba(0,0,0,0.05);
+            border-radius: 24px;
+            padding: 35px 25px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .module-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+            border-color: var(--accent-blue);
+        }
+
+        .icon-box-modern {
+            width: 60px;
+            height: 60px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+        }
+
+        .bg-blue-soft { background: #eff6ff; color: #3b82f6; }
+        .bg-green-soft { background: #ecfdf5; color: #10b981; }
+        .bg-orange-soft { background: #fffbeb; color: #f59e0b; }
+
+        .btn-modern {
+            border-radius: 12px;
+            padding: 12px 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: 0.3s;
+            margin-top: auto;
+        }
+
+        /* Quick System Link Button */
+        .btn-dashboard-pill {
+            background: #f1f5f9;
+            color: #475569;
+            padding: 10px 20px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .btn-dashboard-pill:hover {
+            background: white;
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+        }
+
+        @media (max-width: 992px) {
+            .sidebar {
+                position: fixed;
+                left: -280px; /* Start hidden */
+                top: 0;
+                bottom: 0;
+                width: 280px;
+                z-index: 1050; /* Above top-header */
+                box-shadow: 20px 0 50px rgba(0,0,0,0.3);
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            .sidebar.active { left: 0; }
+            .content, .top-header { margin-left: 0; }
+            .mobile-nav { display: flex !important; }
+            .sidebar-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.5);
+                backdrop-filter: blur(2px);
+                z-index: 1040;
+            }
+
+            .sidebar-overlay.show {
+                display: block;
+            }
+        }
+
+        .mobile-nav {
+            display: none;
+            background: #1C2434;
+            color: white;
+            padding: 15px 20px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
 </style>
 </head>
 
 <body>
-<div class="mobile-nav shadow-sm sticky-top">
+<!-- <div class="mobile-nav shadow-sm sticky-top">
     <button class="collapse-menu" id="sidebarToggle">
         <i class="bi bi-list"></i> Menu
     </button>
     <span class="ms-2 fw-bold">LITS Admin</span>
+</div> -->
+<div class="mobile-nav sticky-top">
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <span class="fw-bold">LITS ADMIN</span>
+    <button class="btn btn-sm btn-outline-light" id="sidebarToggle">
+        <i class="bi bi-list fs-4"></i>
+    </button>
 </div>
 <?php
 include('sidebar.php');
 ?>
 <!-- Sidebar -->
-
+<div class="top-header d-none d-lg-flex">
+    <div class="d-flex align-items-center gap-3">
+        <span class="badge bg-primary-subtle text-primary rounded-pill px-3">v2.4 Stable</span>
+        <small class="text-muted fw-bold"><?= date('l, d M Y') ?></small>
+    </div>
+    <div class="dropdown">
+        <a href="#" class="d-flex align-items-center text-decoration-none text-dark gap-2 dropdown-toggle" data-bs-toggle="dropdown">
+            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;">
+                <i class="bi bi-person-fill"></i>
+            </div>
+            <span class="fw-bold small"><?= $_SESSION['admin'] ?></span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 mt-2">
+            <li><a class="dropdown-item small p-2 px-3" href="#"><i class="bi bi-gear me-2"></i> Settings</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item small p-2 px-3 text-danger" href="logout.php"><i class="bi bi-box-arrow-right me-2"></i> Logout</a></li>
+        </ul>
+    </div>
+</div>
 <!-- Main Content -->
 <div class="content">
     <?php
     $page = $_GET['page'] ?? 'home'; 
 
-    switch ($page) {
-        case 'student_add_page':
-            include('student_add_page.php');
-            break;
-        case 'student_list_page':
-            include('student_list_page.php');
-            break;
-        case 'courses':
-            include('courses_manage.php');
-            break;
-        case 'result_add':
-            include('result_add_page.php');
-            break;
-        case 'result_view':
-            include('result.php');
-            break;
-        case 'lead_view':
-            include('lead.php');
-            break;
-        case 'chart_view':
-            include('admin/admin_dashboard.php');
-            break;
-        case 'job_post':
-            include('admin_job_posts.php');
-            break;
-        case 'certificate':
-            include('Certificate-Admin-Panel.php');
-            break;
-        case 'mandate':
-            include('emi-mandate.php');
-            break;
-        default:
-            ?>
-            <div class="ms-auto">
-                    <a href="dashboard.php?page=chart_view" class="btn-dashboard">
-                        <div class="icon-circle">
-                            <i class="fas fa-chart-pie"></i>
-                        </div>
-                        <div class="btn-text">
-                            <span class="small-label">System</span>
-                            <span class="main-label">Admin Dashboard</span>
-                        </div>
-                        <i class="fas fa-arrow-right ms-2 arrow-icon"></i>
+    if ($page == 'home') {
+    ?>
+        <div class="mb-5 d-flex justify-content-between align-items-center">
+            <div>
+                <h1 class="fw-800 display-6 mb-1">System Overview</h1>
+                <p class="text-muted fw-semibold">Manage your educational ecosystem and financial mandates.</p>
+            </div>
+            <a href="dashboard.php?page=chart_view" class="btn-dashboard-pill">
+                <i class="bi bi-cpu-fill me-2"></i> System Analytics
+            </a>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="module-card">
+                    <div class="icon-box-modern bg-blue-soft">
+                        <i class="bi bi-people-fill"></i>
+                    </div>
+                    <h5 class="fw-800 text-dark">Student Central</h5>
+                    <p class="text-muted small mb-4">Master database for enrollments, student profiles, and attendance tracking.</p>
+                    <a href="dashboard.php?page=student_list_page" class="btn-modern btn-primary w-100">
+                        Manage Records <i class="bi bi-chevron-right ms-auto"></i>
                     </a>
                 </div>
+            </div>
 
-                <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="module-card">
-                        <div class="icon-box-modern bg-blue-soft">
-                            <i class="bi bi-people-fill"></i>
-                        </div>
-                        <h5 class="card-title-modern">Student Management</h5>
-                        <p class="card-text-modern">Access the complete database to add, update, and track all student enrollment details and profiles.</p>
-                        <a href="dashboard.php?page=student_list_page" class="btn-modern btn-blue">
-                            Manage Students <i class="bi bi-arrow-right"></i>
-                        </a>
+            <div class="col-md-4">
+                <div class="module-card">
+                    <div class="icon-box-modern bg-green-soft">
+                        <i class="bi bi-journal-bookmark-fill"></i>
                     </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="module-card">
-                        <div class="icon-box-modern bg-green-soft">
-                            <i class="bi bi-journal-bookmark-fill"></i>
-                        </div>
-                        <h5 class="card-title-modern">Course Catalog</h5>
-                        <p class="card-text-modern">Organize academic programs, manage subjects, and update course curriculum structures effortlessly.</p>
-                        <a href="courses_manage.php" class="btn-modern btn-green">
-                            Manage Courses <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="module-card">
-                        <div class="icon-box-modern bg-orange-soft">
-                            <i class="bi bi-bar-chart-line-fill"></i>
-                        </div>
-                        <h5 class="card-title-modern">Performance Results</h5>
-                        <p class="card-text-modern">Record student grades, generate performance reports, and review academic achievements across sessions.</p>
-                        <a href="view_marks.php" class="btn-modern btn-orange">
-                            Manage Results <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
+                    <h5 class="fw-800 text-dark">Course Catalog</h5>
+                    <p class="text-muted small mb-4">Structure your curriculum, manage subjects, and update training programs.</p>
+                    <a href="dashboard.php?page=courses" class="btn-modern btn-success w-100">
+                        Open Catalog <i class="bi bi-chevron-right ms-auto"></i>
+                    </a>
                 </div>
             </div>
-            <?php
-            break;
+
+            <div class="col-md-4">
+                <div class="module-card">
+                    <div class="icon-box-modern bg-orange-soft">
+                        <i class="bi bi-bar-chart-line-fill"></i>
+                    </div>
+                    <h5 class="fw-800 text-dark">Examination Hub</h5>
+                    <p class="text-muted small mb-4">Input marks, generate grade sheets, and publish academic results.</p>
+                    <a href="dashboard.php?page=result_view" class="btn-modern btn-success w-100">
+                        Review Results <i class="bi bi-chevron-right ms-auto"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    <?php
+    } else {
+        // Handle sub-pages
+        $allowed_pages = [
+            'student_add_page' => 'student_add_page.php',
+            'student_list_page' => 'student_list_page.php',
+            'courses' => 'courses_manage.php',
+            'result_add' => 'result_add_page.php',
+            'result_view' => 'view_marks.php',
+            'lead_view' => 'lead.php',
+            'chart_view' => 'admin/admin_dashboard.php',
+            'job_post' => 'admin_job_posts.php',
+            'certificate' => 'Certificate-Admin-Panel.php',
+            'mandate' => 'emi-mandate.php',
+            'add_job' => 'post_job.php',
+            'edit_job' => 'edit_job.php',
+            'edit_marks' => 'edit_marks.php',
+            'add_certificate' => 'add_certificate.php',
+            'certificate_list' => 'certificate_list.php',
+            'certificate_verify' => 'certificate_verify.php',
+            'courses_manage' => 'courses_manage.php',
+            'edit_course' => 'edit_course.php',
+            'manage_categories' => 'manage_categories.php',
+            'create_course' => 'create_course.php',
+            'admin_placements' => 'admin_placements.php',
+        ];
+
+        if (array_key_exists($page, $allowed_pages)) {
+            include($allowed_pages[$page]);
+        }
     }
     ?>
 </div>
@@ -459,11 +626,6 @@ include('sidebar.php');
     const toggleBtn = document.getElementById('sidebarToggle');
     const sidebar = document.querySelector('.sidebar');
     
-    if(toggleBtn) {
-        toggleBtn.addEventListener('click', function() {
-            sidebar.classList.toggle('active');
-        });
-    }
 
     // Optional: Close sidebar when clicking outside on mobile
     document.addEventListener('click', function(event) {
@@ -473,6 +635,9 @@ include('sidebar.php');
         }
     });
 });
+    document.getElementById('sidebarToggle')?.addEventListener('click', function() {
+        document.querySelector('.sidebar').classList.toggle('active');
+    });
 </script>
 </body>
 </html>
